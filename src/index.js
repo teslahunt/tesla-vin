@@ -7,7 +7,7 @@ const worldManufacturingIdentifier = input => {
     case '5YJ':
       return 'Fremont, California'
     case '7SA':
-      return 'Fremont, California'
+      return 'Austin, Texas'
     case 'LRW':
       return 'Shanghai, China'
     case 'XP7':
@@ -20,7 +20,7 @@ const worldManufacturingIdentifier = input => {
   }
 }
 
-const bodyType = input => {
+const chassis = input => {
   switch (input) {
     case 'A':
     case 'E':
@@ -39,16 +39,13 @@ const bodyType = input => {
 
 const restraintSystems = input => {
   switch (input) {
-    case '1':
-      return 'Type 2 Manual seat belts (FR, SR*3) with front Airbags, PODS, side Inflatable restraints, Knee Airbags'
     case '7':
-      return 'Type 2 Manual seatbelts (FR, SR*3) with front Airbags, side Inflatable restraints'
-    case 'A':
-      return 'Type 2 Manual seatbelts (FR, SR*3, TR*2) with front Airbags, PODS, side Inflatable restraints, Knee Airbags'
-    case 'D':
-      return 'Type 2 Manual seatbelts (FR, SR*3) with front Airbags, PODS, side Inflatable restraints, Knee Airbags'
     case 'C':
-      return 'Type 2 Manual seatbelts with front Airbags, PODS, side Inflatable restraints'
+      return 'Front Airbags, side Inflatable restraints'
+    case '1':
+    case 'A':
+    case 'D':
+      return 'Front Airbags, PODS, side Inflatable restraints, Knee Airbags'
     default:
       debug.warn(`Unknown restraintSystems: ${input}`)
       return null
@@ -58,9 +55,9 @@ const restraintSystems = input => {
 const fuelType = input => {
   switch (input) {
     case 'E':
-      return 'Electric (Fremont-built vehicles), Ternary System Li-ion battery (Giga Shanghai-built vehicles)'
+      return 'Nickel Manganese Cobalt (NMC)'
     case 'F':
-      return 'Lithium Iron Phosphate Battery (Giga Shanghai-built vehicles only)'
+      return 'Lithium Iron Phosphate Battery (LFP)'
     default:
       debug.warn(`Unknown fuelType: ${input}`)
       return null
@@ -128,15 +125,15 @@ const year = input => {
 const plantOfManufacture = input => {
   switch (input) {
     case 'A':
-      return 'Tesla Austin, TX (USA)'
+      return 'Tesla Austin, Texas (USA)'
     case 'B':
-      return 'Tesla Berlin (Germany)'
+      return 'Tesla Berlin, Germany'
     case 'C':
-      return 'Tesla China (Giga Shanghai)'
+      return 'Tesla Shangai, China'
     case 'F':
-      return 'Tesla Fremont, CA (USA)'
+      return 'Tesla Fremont, California (USA)'
     default:
-      debug.warn(`Unknown fuelType identifier: ${input}`)
+      debug.warn(`Unknown Fremont identifier: ${input}`)
       return null
   }
 }
@@ -168,13 +165,13 @@ const model = input => {
 module.exports = vin => {
   const result = {
     model: model(vin[3]),
-    bodyType: bodyType(vin[4]),
+    year: year(vin[9]),
+    chassis: chassis(vin[4]),
     worldManufacturingIdentifier: worldManufacturingIdentifier(vin.slice(0, 3)),
     restraintSystems: restraintSystems(vin[5]),
     fuelType: fuelType(vin[6]),
     motor: motor(vin[7]),
-    year: year(vin[9]),
-    PlantOFManufacture: plantOfManufacture(vin[10])
+    plantOfManufacture: plantOfManufacture(vin[10])
   }
 
   debug.warn('\n' + JSON.stringify({
