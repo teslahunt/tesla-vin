@@ -2,7 +2,7 @@
   "name": "tesla-vin",
   "description": "I'm a lazy",
   "homepage": "https://github.com/teslahunt/vin",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "src/index.js",
   "author": {
     "email": "hello@teslahunt.io",
