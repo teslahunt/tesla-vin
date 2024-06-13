@@ -174,6 +174,8 @@ module.exports = vin => {
     plantOfManufacture: plantOfManufacture(vin[10])
   }
 
+  result.year = `${result.year} (${new Date().getFullYear() - result.year} years old)`
+
   debug.warn('\n' + JSON.stringify({
     vin,
     result
