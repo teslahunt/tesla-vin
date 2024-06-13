@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = input => {
   switch (input) {
     case 'S':

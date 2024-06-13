@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = letter => {
   switch (letter) {
     case 'F':

@@ -1,3 +1,5 @@
+'use strict'
+
 const X = (letter, year) => {
   switch (year) {
     case 2016:

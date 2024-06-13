@@ -1,7 +1,5 @@
 'use strict'
 
-// TODO: add vin locations photos
-
 const debug = require('debug-logfmt')('tesla-vin')
 
 const digit = (input, start, end) => (end ? input.slice(start - 1, end) : input[start - 1])
