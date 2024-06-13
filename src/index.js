@@ -156,30 +156,43 @@ const model = input => {
   }
 }
 
+const digit = (input, start, end) => end ? input.slice(start - 1, end) : input[start - 1]
+
 /**
  * - https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-0C797294-574D-4EE4-8017-C339A7D58411.html
  * - https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-0C797294-574D-4EE4-8017-C339A7D58411.html
  * - https://www.findmyelectric.com/tesla-vin-decoder/
  * - https://teslatap.com/vin-decoder/
+ * - https://service.tesla.com/docs/ModelY/ServiceManual/en-us/GUID-0C797294-574D-4EE4-8017-C339A7D58411.html
  */
 module.exports = vin => {
   const result = {
-    model: model(vin[3]),
-    year: year(vin[9]),
-    chassis: chassis(vin[4]),
-    worldManufacturingIdentifier: worldManufacturingIdentifier(vin.slice(0, 3)),
-    restraintSystems: restraintSystems(vin[5]),
-    fuelType: fuelType(vin[6]),
-    motor: motor(vin[7]),
-    plantOfManufacture: plantOfManufacture(vin[10])
+    model: model(digit(vin, 4)),
+    year: year(digit(vin, 10)),
+    chassis: chassis(digit(vin, 5)),
+    worldManufacturingIdentifier: worldManufacturingIdentifier(digit(vin, 1, 3)),
+    restraintSystems: restraintSystems(digit(vin, 6)),
+    fuelType: fuelType(digit(vin, 7)),
+    motor: motor(digit(vin, 8)),
+    plantOfManufacture: plantOfManufacture(digit(vin, 11))
   }
 
-  result.year = `${result.year} (${new Date().getFullYear() - result.year} years old)`
+  result.year = `${result.year} (${
+    new Date().getFullYear() - result.year
+  } years old)`
 
-  debug.warn('\n' + JSON.stringify({
-    vin,
-    result
-  }, null, 2) + '\n')
+  debug.warn(
+    '\n' +
+      JSON.stringify(
+        {
+          vin,
+          result
+        },
+        null,
+        2
+      ) +
+      '\n'
+  )
 
   return result
 }
