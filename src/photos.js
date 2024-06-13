@@ -1,6 +1,6 @@
 'use strict'
 
-const BASE_URL = 'https://teslahunt.github.io/vin/images'
+const BASE_URL = 'https://teslahunt.github.io/tesla-vin/images'
 
 const S = year => {
   switch (year) {
