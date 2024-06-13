@@ -1,9 +1,12 @@
 {
   "name": "tesla-vin",
-  "description": "I'm a lazy",
+  "description": "Tesla Vehicle Identification Number (VIN) implemented following Model S/3/X/Y service manuals",
   "homepage": "https://github.com/teslahunt/vin",
   "version": "0.0.1",
   "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "author": {
     "email": "hello@teslahunt.io",
     "name": "Tesla Hunt",
@@ -18,6 +21,12 @@
   },
   "keywords": [
     "decoder",
+    "manual",
+    "model-3",
+    "model-s",
+    "model-x",
+    "model-y",
+    "service",
     "tesla",
     "vin"
   ],
@@ -43,6 +52,9 @@
   "engines": {
     "node": ">= 18"
   },
+  "files": [
+    "src"
+  ],
   "scripts": {
     "clean": "rm -rf node_modules",
     "contributors": "(npx git-authors-cli && npx finepack && git add package.json && git commit -m 'build: contributors' --no-verify) || true",
@@ -68,9 +80,6 @@
         0
       ]
     }
-  },
-  "exports": {
-    ".": "./src/index.js"
   },
   "nano-staged": {
     "*.js": [
