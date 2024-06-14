@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.4 (2024-06-14)
+
+
+### Bug Fixes
+
+* motor detection for Model X ([f4fc3c9](https://github.com/teslahunt/tesla-vin/commit/f4fc3c9dd3a10b05982a5f1a20a050929a7e5eed))
+
 ### 0.0.3 (2024-06-14)
 
 
