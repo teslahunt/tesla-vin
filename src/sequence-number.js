@@ -1,3 +1,5 @@
+const isLetter = input => !/^\d/.test(input)
+
 const getName = input => {
   switch (input) {
     case 'A':
@@ -20,7 +22,7 @@ const getName = input => {
 module.exports = input => {
   let name = null
 
-  if (Number.isNaN(input[0])) {
+  if (isLetter(input[0])) {
     name = getName(input[0])
     input = input.slice(1)
   }

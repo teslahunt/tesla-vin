@@ -23,3 +23,7 @@ test('Tesla Model 3 Long Range AWD 2019', t => {
 test('Tesla Model 3 Performance 2019', t => {
   t.snapshot(vinDecoder('5YJ3F7EB3KF438661'))
 })
+
+test('Tesla Model 3 Long Range AWD 2020', t => {
+  t.snapshot(vinDecoder('5YJ3E1EB7LF788019'))
+})
