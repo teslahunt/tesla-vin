@@ -30,3 +30,7 @@ test('Berlin', t => {
 test.skip('long VINs', t => {
   t.snapshot(vinDecoder('LRWY258_d4752fcc6aa867bb533fa6d2c61a2586'))
 })
+
+test('Tesla Model Y Long Range AWD 2021', t => {
+  t.snapshot(vinDecoder('5YJYGDEE4MF067850'))
+})

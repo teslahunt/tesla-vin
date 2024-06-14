@@ -55,7 +55,8 @@ const S = (letter, year) => {
         case '2':
           return 'Type 2 manual seatbelts (FR, SR*3) with front airbags, side inflatable restraints, knee airbags (FR)'
         case '3':
-          return 'Type 2 manual seatbelts (FR, SR*3) with front airbags, side inflatable restraints'
+          return 'Type 2 manual seatbelts (FR, SR*3) with front airbags, side inflatable restraints & active hood'
+        case '6':
         case '7':
           return 'Type 2 manual seatbelts (FR, SR*3) with front airbags, side inflatable restraints & active hood'
         default:
