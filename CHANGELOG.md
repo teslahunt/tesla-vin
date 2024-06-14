@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.5 (2024-06-14)
+
+
+### Bug Fixes
+
+* sequence number ([8583821](https://github.com/teslahunt/tesla-vin/commit/8583821d2ef43fb63bf69661dc3ca708f7894aa6))
+
 ### 0.0.4 (2024-06-14)
 
 
