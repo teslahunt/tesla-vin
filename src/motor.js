@@ -72,10 +72,10 @@ const X = letter => {
   switch (letter) {
     case '2':
       return 'Dual Motor (standard)'
+    case '4':
+      return 'Dual Motor (performance)'
     case '5':
       return 'Dual Motor'
-    case '3':
-      return 'Dual Motor (performance)'
     case '6':
       return 'Triple Motor'
     default:
