@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### 0.0.6 (2024-06-14)
+
+
+### Bug Fixes
+
+* restraing system for 2015 model s ([cf11f02](https://github.com/teslahunt/tesla-vin/commit/cf11f020fbba3538ab7669f9c3d0a9904c7a83d9))
+
 ### 0.0.5 (2024-06-14)
 
 
