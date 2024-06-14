@@ -7,3 +7,7 @@ const vinDecoder = require('../src')
 test('Tesla Model X 75D 2018', t => {
   t.snapshot(vinDecoder('5YJXCCE22JF117647'))
 })
+
+test('Tesla Model X P100D 2016', t => {
+  t.snapshot(vinDecoder('5YJXCAE48GF028759'))
+})

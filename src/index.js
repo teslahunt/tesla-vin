@@ -21,11 +21,11 @@ module.exports = vin => {
     bateryType: require('./battery-type')(digit(vin, 7)),
     bodyType: require('./body-type')[modelLetter](digit(vin, 5), year),
     model: require('./model')(modelLetter),
-    motor: require('./motor')[modelLetter](digit(vin, 8)),
+    motor: require('./motor')[modelLetter](digit(vin, 8), year),
     photos: require('./photos')[modelLetter](year),
     plantOfManufacture: require('./plan-of-manufacture')(digit(vin, 11)),
     restraintSystems: require('./restraint-systems')[modelLetter](digit(vin, 6), year),
-    sequenceNumber: Number(digit(vin, 12, 17)),
+    sequenceNumber: require('./sequence-number')(digit(vin, 12, 17)),
     worldManufacturingIdentifier: require('./world-manufacturing-identifier')(digit(vin, 1, 3)),
     year
   }
