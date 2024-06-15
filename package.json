@@ -2,7 +2,7 @@
   "name": "tesla-vin",
   "description": "Tesla Vehicle Identification Number (VIN) implemented following Model S/3/X/Y service manuals",
   "homepage": "https://github.com/teslahunt/tesla-vin",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "main": "src/index.js",
   "exports": {
     ".": "./src/index.js"
