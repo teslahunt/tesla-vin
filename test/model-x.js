@@ -19,3 +19,7 @@ test('Tesla Model X P100D 2016', t => {
 test('Tesla Model X 90D 2016', t => {
   t.snapshot(vinDecoder('5YJXCCE24GF009944'))
 })
+
+test('Tesla Model X Plaid 2023', t => {
+  t.snapshot(vinDecoder('7SAXCCE67PF384216'))
+})
