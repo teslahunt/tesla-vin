@@ -31,3 +31,7 @@ test('Tesla Model S 75D 2018', t => {
 test('Tesla Model S Plaid 2022', t => {
   t.snapshot(vinDecoder('5YJSA1E6XNF472157'))
 })
+
+test('Tesla Model S 90D 2016', t => {
+  t.snapshot(vinDecoder('5YJS892_452b96196a67144dec3cfae75ba160de'))
+})

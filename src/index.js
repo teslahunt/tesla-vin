@@ -13,8 +13,10 @@ const digit = (input, start, end) => (end ? input.slice(start - 1, end) : input[
  * - https://service.tesla.com/docs/Model3/ServiceManual/en-us/GUID-0C797294-574D-4EE4-8017-C339A7D58411.html
  */
 module.exports = vin => {
-  if (vin.length !== 17) {
-    throw new TypeError(`The VIN must have 17 characters, got ${vin.length} (${vin})`)
+  if (vin.length === 40) {
+    // FIXME: We don't know how th decode the second part
+    // See https://github.com/teslahunt/tesla-vin/issues/1
+    vin = vin.split('_')[0]
   }
 
   const modelLetter = digit(vin, 4)

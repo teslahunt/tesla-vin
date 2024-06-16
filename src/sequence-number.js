@@ -27,5 +27,5 @@ module.exports = input => {
     input = input.slice(1)
   }
 
-  return { name, value: Number(input) }
+  return name === null && input === '' ? null : { name, value: Number(input) }
 }
