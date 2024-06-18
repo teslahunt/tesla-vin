@@ -26,7 +26,7 @@ module.exports = vin => {
     bodyType: require('./body-type')[modelLetter](digit(vin, 5), year),
     model: require('./model')(modelLetter),
     motor: require('./motor')[modelLetter](digit(vin, 8), year),
-    photos: require('./photos')[modelLetter](year),
+    photos: require('./photos')[modelLetter],
     plantOfManufacture: require('./plan-of-manufacture')(digit(vin, 11)),
     restraintSystems: require('./restraint-systems')[modelLetter](digit(vin, 6), year),
     sequenceNumber: require('./sequence-number')(digit(vin, 12, 17)),
